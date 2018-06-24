@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxt.mapper.RoleMapper" >
+  <resultMap id="BaseResultMap" type="com.sxt.pojo.Role" >
+    <id column="roleid" property="roleid" jdbcType="INTEGER" />
+    <result column="rolename" property="rolename" jdbcType="VARCHAR" />
+    <result column="roledesc" property="roledesc" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    roleid, rolename, roledesc
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_roles
+    where roleid = #{roleid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sys_roles
+    where roleid = #{roleid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sxt.pojo.Role" >
+    insert into sys_roles (roleid, rolename, roledesc
+      )
+    values (#{roleid,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR}, #{roledesc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sxt.pojo.Role" >
+    insert into sys_roles
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roleid != null" >
+        roleid,
+      </if>
+      <if test="rolename != null" >
+        rolename,
+      </if>
+      <if test="roledesc != null" >
+        roledesc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roleid != null" >
+        #{roleid,jdbcType=INTEGER},
+      </if>
+      <if test="rolename != null" >
+        #{rolename,jdbcType=VARCHAR},
+      </if>
+      <if test="roledesc != null" >
+        #{roledesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sxt.pojo.Role" >
+    update sys_roles
+    <set >
+      <if test="rolename != null" >
+        rolename = #{rolename,jdbcType=VARCHAR},
+      </if>
+      <if test="roledesc != null" >
+        roledesc = #{roledesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where roleid = #{roleid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sxt.pojo.Role" >
+    update sys_roles
+    set rolename = #{rolename,jdbcType=VARCHAR},
+      roledesc = #{roledesc,jdbcType=VARCHAR}
+    where roleid = #{roleid,jdbcType=INTEGER}
+  </update>
+</mapper>
