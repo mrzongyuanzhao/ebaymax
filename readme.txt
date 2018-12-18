@@ -1,10 +1,13 @@
 JSON详解：
 https://www.cnblogs.com/free-dom/p/5801866.html
 https://www.cnblogs.com/cdf-opensource-007/p/7106018.html
+
 公钥私钥的理解：
 https://blog.csdn.net/weixin_36082485/article/details/53386190
+
 rpc简单代码:
-http://javatar.iteye.com/blog/1123915   
+http://javatar.iteye.com/blog/1123915 
+
 JVM通用的分代垃圾回收机制：http://www.sxt.cn/Java_jQuery_in_action/The_garbage_collection_mechanism.html
     分代垃圾回收机制，是基于这样一个事实：不同的对象的生命周期是不一样的。因此，不同生命周期的对象可以采取不同的回收算法，以便提高回收效率。我们将对象分为三种状态：年轻代、年老代、持久代。JVM将堆内存划分为 Eden、Survivor 和 Tenured/Old 空间。
 
@@ -47,3 +50,16 @@ http://www.sxt.cn/360shop/Public/admin/UEditor/20170516/1494926399617250.png
     4、重复多次(默认15次)Survivor中没有被清理的对象，则会复制到老年代Old(Tenured)区中，
 
     5、当Old区满了，则会触发一个一次完整地垃圾回收（FullGC），之前新生代的垃圾回收称为（minorGC）
+
+
+挂载概念
+
+Linux中的根目录以外的文件要想被访问，需要将其“关联”到根目录下的某个目录来实现，这种关联操作就是“挂载”，这个目录就是“挂载点”，解除次关联关系的过程称之为“卸载”。
+
+注意：“挂载点”的目录需要以下几个要求：
+
+（1）目录事先存在，可以用mkdir命令新建目录；
+
+（2）挂载点目录不可被其他进程使用到；
+
+（3）挂载点下原有文件将被隐藏。
