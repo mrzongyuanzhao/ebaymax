@@ -1,3 +1,8 @@
+linux不解压超大日志gz包直接查找特定内容:
+gzip -dc myfile.gz | grep 'Exception' | more
+或者
+gzip -c myfile.gz | grep 'Exception' | more
+
 JSON详解：
 https://www.cnblogs.com/free-dom/p/5801866.html
 https://www.cnblogs.com/cdf-opensource-007/p/7106018.html
