@@ -1,3 +1,28 @@
+实用命令：
+
+非压缩文件（*.log、*.txt等）使用cat/more/less/head/tail/grep/egrep/sed/awk
+压缩文件（*.gz *.xz *.zip等）使用zcat/zmore/zless/zgrep/zegrep
+
+查看tomcat运行日志 tail -f catalina.out
+
+通过关键字搜索查看日志  cat jeewx-2015-09-20.log | grep 验证码
+
+查看固定时间日志  cat jeewx-2015-09-20.log | grep   '2015-09-20 18:50:15'
+
+查看最近50行日志  tail -n 50 -f catalina.out
+
+Linux查看日志命令总结：
+
+cat 显示整个文件
+
+tail 命令用于显示文本文件的末尾几行
+
+head  从文本文件的头部开始查看，head 命令用于查看一个文本文件的开头部分
+
+more  以百分比的形式查看日志
+
+less  跟more功能差不多，只不过less支持前后翻阅文件
+
 linux不解压超大日志gz包直接查找特定内容:
 gzip -dc myfile.gz | grep 'Exception' | more
 或者
