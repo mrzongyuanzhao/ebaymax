@@ -86,4 +86,5 @@ Linux中的根目录以外的文件要想被访问，需要将其“关联”到
 
 10.插入CD，系统其实自动执行了 mount /dev/cdrom /media/cdrom。所以可以直接在/media/cdrom中对CD中的内容进行管理。
 ---------------------
-
+java中的环境变量path和classpath的作用:
+https://blog.csdn.net/dhaiuda/article/details/79294866 https://blog.csdn.net/weixin_37730482/article/details/74465947
